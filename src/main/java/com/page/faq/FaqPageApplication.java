@@ -10,4 +10,5 @@ public class FaqPageApplication {
         SpringApplication.run(FaqPageApplication.class, args);
     }
 
+
 }
