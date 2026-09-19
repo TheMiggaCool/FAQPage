@@ -1,0 +1,132 @@
+.faq {
+  max-width: 760px;
+  margin: 0 auto;
+  /* padding inferior extra para que el botón flotante no tape el contenido */
+  padding: 56px 24px 140px;
+}
+
+.faq__title {
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  letter-spacing: -0.01em;
+}
+
+.faq__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--lila-200);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--lila-200);
+  transition: background-color 0.25s ease;
+}
+
+.faq-item.is-open {
+  background: var(--lila-50);
+}
+
+.faq-item__heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 8px;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-item__trigger:hover {
+  color: var(--lila-700);
+}
+
+/* Ícono + que se transforma en − */
+.faq-item__icon {
+  position: relative;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--celeste-100);
+  transition: background-color 0.25s ease;
+}
+
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--lila-600);
+  transform: translate(-50%, -50%);
+}
+
+.faq-item__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.is-open .faq-item__icon {
+  background: var(--celeste-200);
+}
+
+.faq-item.is-open .faq-item__icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Expandir/colapsar con transición suave (0fr → 1fr) */
+.faq-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.is-open .faq-item__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq-item__panel-inner {
+  overflow: hidden;
+  visibility: hidden;
+  /* oculta el contenido a teclado/lector solo cuando terminó de cerrarse */
+  transition: visibility 0s linear 0.3s;
+}
+
+.faq-item.is-open .faq-item__panel-inner {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.faq-item__answer {
+  margin: 0;
+  padding: 0 56px 22px 8px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+@media (max-width: 520px) {
+  .faq {
+    padding-top: 40px;
+  }
+
+  .faq-item__answer {
+    padding-right: 8px;
+  }
+}

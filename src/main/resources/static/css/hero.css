@@ -1,0 +1,50 @@
+.hero {
+  background: var(--celeste-100);
+}
+
+.hero__inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 88px) 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero__title {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero__text {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+}
+
+.hero__art {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  justify-self: end;
+}
+
+@media (max-width: 760px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero__art {
+    order: -1;
+    max-width: 150px;
+    justify-self: start;
+  }
+}

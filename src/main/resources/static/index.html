@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>QLQMMG</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro de ayuda</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap"
+  />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/faq.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
 </head>
 <body>
+  <div id="root"></div>
 
+  <!-- React y Babel (compila el JSX en el navegador) -->
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+
+  <!-- Scripts planos -->
+  <script src="js/globals.js"></script>
+  <script src="js/faqs-data.js"></script>
+
+  <!-- Componentes (el orden importa: App y main van al final) -->
+  <script type="text/babel" data-presets="react" src="js/components/Blossom.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/components/Hero.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/components/FaqAccordion.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/components/ChatbotWidget.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/components/App.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/main.jsx"></script>
 </body>
 </html>
