@@ -2,5 +2,6 @@ spring:
   application:
     name: FAQPage
 
-  gemini:
-    model: gemini-1.5-flash
+  server:
+    port: ${PORT:8080}
+    address: 0.0.0.0
