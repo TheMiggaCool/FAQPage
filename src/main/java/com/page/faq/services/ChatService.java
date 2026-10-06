@@ -1,25 +1,20 @@
 package com.page.faq.services;
 
 import com.page.faq.client.AIRouter;
-import com.page.faq.client.GroqClient;
-import com.page.faq.client.OpenRouterClient;
-import com.page.faq.client.IAClient;
-import com.page.faq.client.OpenRouterClient;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ChatService {
 
     private final AIRouter aiRouter;
+    private final LilaPrompt lilaPrompt;
 
-    // Constructor de la clase
-    public ChatService(AIRouter aiRouter) {
+    public ChatService(AIRouter aiRouter, LilaPrompt lilaPrompt) {
         this.aiRouter = aiRouter;
+        this.lilaPrompt = lilaPrompt;
     }
 
-    // Método para procesar mensajes
     public String procesarMensaje(String mensaje) {
-        return aiRouter.generarRespuesta(mensaje);
+        return aiRouter.generarRespuesta(lilaPrompt.get(), mensaje);
     }
 }
