@@ -17,7 +17,7 @@ public class GeminiClient implements IAClient {
         this.client = Client.builder()
                 .httpOptions(
                         HttpOptions.builder()
-                                .timeout(30000)
+                                .timeout(10000)
                                 .build()
                 )
                 .build();

@@ -20,7 +20,6 @@ public class ChatService {
 
     // Método para procesar mensajes
     public String procesarMensaje(String mensaje) {
-
         return aiRouter.generarRespuesta(mensaje);
     }
 }
