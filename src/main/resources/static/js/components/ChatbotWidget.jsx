@@ -190,17 +190,9 @@ function ChatbotWidget() {
                       <LilaAvatar size={32} />
                       <div className="msg__body">
                         <span className="msg__author">Lila</span>
-                        {html ? (
-                            <div
-                                className="msg__bubble"
-                                dangerouslySetInnerHTML={{ __html: html }}
-                            />
-                        ) : (
-                            <div className={`msg__bubble${isError ? " msg__bubble--error" : ""}`}>
-                              {text}
-                            </div>
-                        )}
-
+                        <p className={`msg__bubble${isError ? " msg__bubble--error" : ""}`}>
+                          {text}
+                        </p>
                       </div>
                     </div>
                 ) : (
