@@ -6,24 +6,26 @@ import org.springframework.stereotype.Component;
 @Component
 public class AIRouter {
 
-    private final IAClient geminiClient;
+    //private final IAClient geminiClient;
     private final IAClient groqClient;
 
     public AIRouter(
-            @Qualifier("geminiClient") IAClient geminiClient,
+            //@Qualifier("geminiClient") IAClient geminiClient,
             @Qualifier("groqClient") IAClient groqClient
     ) {
-        this.geminiClient = geminiClient;
+        //this.geminiClient = geminiClient;
         this.groqClient = groqClient;
     }
 
-    public String generarRespuesta(String mensaje) {
+    public String generarRespuesta(String systemPropt, String mensaje) {
+        return groqClient.generarRespuesta(systemPropt, mensaje);
 
+        /*
         System.out.println("Intentando con Gemini...");
 
         try {
 
-            return geminiClient.generarRespuesta(mensaje);
+            return geminiClient.generarRespuesta(systemPropt, mensaje);
 
         } catch (IAException e) {
 
@@ -41,7 +43,10 @@ public class AIRouter {
                             "). Intentando con Groq..."
             );
 
-            return groqClient.generarRespuesta(mensaje);
+            return groqClient.generarRespuesta(systemPropt, mensaje);
         }
+
+    }
+         */
     }
 }

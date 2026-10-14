@@ -19,7 +19,7 @@ public class GroqClient implements IAClient {
     }
 
     @Override
-    public String generarRespuesta(String mensaje) {
+    public String generarRespuesta(String systemPrompt, String mensaje) {
 
         System.out.println("Enviando mensaje a Groq...");
 
@@ -27,7 +27,9 @@ public class GroqClient implements IAClient {
 
         Map<String, Object> request = Map.of(
                 "model", "openai/gpt-oss-20b",
+                "max_tokens", 350,
                 "messages", new Object[]{
+                        Map.of("role", "system", "content", systemPrompt),
                         Map.of(
                                 "role", "user",
                                 "content", mensaje

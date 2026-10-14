@@ -19,7 +19,7 @@ public class OpenRouterClient implements IAClient {
     }
 
     @Override
-    public String generarRespuesta(String mensaje) {
+    public String generarRespuesta(String systemPrompt, String mensaje) {
 
         System.out.println("Enviando mensaje a OpenRouter...");
 
@@ -31,6 +31,7 @@ public class OpenRouterClient implements IAClient {
         Map<String, Object> request = Map.of(
                 "model", "openrouter/free",
                 "messages", new Object[]{
+                        Map.of("role", "system", "content", systemPrompt),
                         Map.of(
                                 "role", "user",
                                 "content", mensaje

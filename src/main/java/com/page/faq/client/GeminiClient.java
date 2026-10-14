@@ -24,13 +24,13 @@ public class GeminiClient implements IAClient {
     }
 
     /* Método para generar respuestas
-    public String generarRespuesta(String mensaje) {
+    public String generarRespuesta(String systemPrompt, String mensaje) {
 
         System.out.println("Enviando mensaje a Gemini...");
         GenerateContentResponse response =
                 client.models.generateContent(
                         "gemini-3.8-flash",
-                        mensaje,
+                        (systemPrompt +". " + mensaje),
                         null
                 );
         System.out.println("Gemini respondió jeje");
@@ -40,7 +40,7 @@ public class GeminiClient implements IAClient {
     */
 
     @Override
-    public String generarRespuesta(String mensaje) {
+    public String generarRespuesta(String systemPrompt,String mensaje) {
 
         System.out.println("Enviando mensaje a Gemini...");
 
@@ -49,7 +49,7 @@ public class GeminiClient implements IAClient {
             GenerateContentResponse response =
                     client.models.generateContent(
                             "gemini-3.8-flash",
-                            mensaje,
+                            (systemPrompt +". " + mensaje),
                             null
                     );
 
