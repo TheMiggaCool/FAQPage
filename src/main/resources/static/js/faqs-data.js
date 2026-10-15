@@ -70,5 +70,4 @@ const FAQS = [
         "Es un pequeño dispositivo que un profesional de salud coloca dentro del útero. " +
         "Existen DIU de cobre, que no contienen hormonas, y DIU hormonales, que liberan una hormona para prevenir el embarazo.",
   },
-
 ];
