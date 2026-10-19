@@ -13,7 +13,7 @@ public class LilaPrompt {
     private final String contenido;
 
     // Se lee una sola vez al arrancar la app
-    public LilaPrompt(@Value("classpath:prompts/lila.txt") Resource recurso) throws IOException {
+    public LilaPrompt(@Value("classpath:prompts/lila1.txt") Resource recurso) throws IOException {
         this.contenido = recurso.getContentAsString(StandardCharsets.UTF_8);
     }
 
