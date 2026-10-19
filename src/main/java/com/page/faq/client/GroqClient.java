@@ -27,6 +27,7 @@ public class GroqClient implements IAClient {
 
         Map<String, Object> request = Map.of(
                 "model", "openai/gpt-oss-20b",
+                "temperature", 0.2,
                 "max_tokens", 350,
                 "messages", new Object[]{
                         Map.of("role", "system", "content", systemPrompt),
